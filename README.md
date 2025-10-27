@@ -26,7 +26,7 @@ O foco deste projeto não é criar um software complexo, mas sim explorar os seg
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/Pontinn/clean-architecture](https://github.com/Pontinn/clean-architecture)
+    git clone https://github.com/Pontinn/clean-architecture
     cd EventClean
     ```
 
