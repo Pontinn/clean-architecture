@@ -10,7 +10,7 @@ public record Event(Long id,
                     Integer capacity,
                     String identifier,
                     EventType eventType,
-                    String local,
+                    String eventLocal,
                     LocalDateTime startDate,
                     LocalDateTime endDate,
                     String organizer) {
