@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class EventMapper {
 
-    public static Event toEvent(EventRequest request) {
+    public static Event toDomain(EventRequest request) {
         return Event.builder()
                 .name(request.name())
                 .description(request.description())
