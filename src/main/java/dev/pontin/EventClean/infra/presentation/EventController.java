@@ -6,6 +6,7 @@ import dev.pontin.EventClean.infra.dtos.request.EventRequest;
 import dev.pontin.EventClean.infra.dtos.response.EventResponse;
 import dev.pontin.EventClean.infra.mapper.EventMapper;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,9 +21,8 @@ public class EventController {
     }
 
     @PostMapping
-    public EventResponse createEvent(EventRequest dto) {
-        Event newEvent = createEventCase.execute(EventMapper.toEvent(dto));
-
+    public EventResponse createEvent(@RequestBody EventRequest dto) {
+        Event newEvent = createEventCase.execute(EventMapper.toDomain(dto));
         return EventMapper.toResponse(newEvent);
     }
 }
