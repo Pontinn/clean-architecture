@@ -7,6 +7,7 @@ import dev.pontin.EventClean.infra.persistence.EventEntity;
 import dev.pontin.EventClean.infra.persistence.EventRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -22,8 +23,9 @@ public class EventRepositoryGateway implements EventGateway {
         EventEntity saved = eventRepository.save(entity);
         return EventEntityMapper.toDomain(saved);
     }
-
+    
     @Override
+    @Transactional(readOnly = true)
     public List<Event> searchEvent() {
         List<EventEntity> entityList = eventRepository.findAll();
 
