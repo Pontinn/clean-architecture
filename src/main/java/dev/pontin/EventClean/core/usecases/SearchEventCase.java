@@ -2,7 +2,9 @@ package dev.pontin.EventClean.core.usecases;
 
 import dev.pontin.EventClean.core.entities.Event;
 
+import java.util.List;
+
 public interface SearchEventCase {
 
-    public Event execute(Event event);
+    List<Event> execute();
 }

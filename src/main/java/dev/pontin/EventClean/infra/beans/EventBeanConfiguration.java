@@ -4,6 +4,8 @@ package dev.pontin.EventClean.infra.beans;
 import dev.pontin.EventClean.core.gateway.EventGateway;
 import dev.pontin.EventClean.core.usecases.CreateEventCase;
 import dev.pontin.EventClean.core.usecases.CreateEventCaseImpl;
+import dev.pontin.EventClean.core.usecases.SearchEventCase;
+import dev.pontin.EventClean.core.usecases.SearchEventCaseImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,5 +15,10 @@ public class EventBeanConfiguration {
     @Bean
     public CreateEventCase createEventCase(EventGateway eventGateway) {
         return new CreateEventCaseImpl(eventGateway);
+    }
+
+    @Bean
+    public SearchEventCase searchEventCase(EventGateway eventGateway) {
+        return new SearchEventCaseImpl(eventGateway);
     }
 }
